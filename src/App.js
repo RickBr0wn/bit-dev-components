@@ -1,12 +1,8 @@
 import React from 'react'
-import Flex from './components/Flex'
+import Button from './components/Button'
 
 function App() {
-  return (
-    <Flex width={'100vw'} justifyContent={'center'}>
-      <h1>I'm Flexed!</h1>
-    </Flex>
-  )
+  return <Button onClick={() => console.log('clicked')} />
 }
 
 export default App
