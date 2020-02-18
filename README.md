@@ -1,68 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Build the React Component
 
-## Available Scripts
+Now that the compiler is installed, build the component. Building the component serves two purposes:
 
-In the project directory, you can run:
+Make the component directly consumable by other projects.
+Make sure that the component is all-inclusive and contains all the parts that are required in order to share it with others.
+Right now the component lives inside your project and may consume some dependencies from your project. Bit build is taking place in an isolated environment to make sure the process will also succeed on the cloud or in any other project. To build your component, run this command inside your react project:
 
-### `yarn start`
+bit build
+This results in the component name (product-list) followed by a list of file names. Those are the built files of the component.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Export Component
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+With the component properly built, it is now time to share it with the world.
+Components are versioned according to semver standards. To tag your component with a version, run the following command:
 
-### `yarn test`
+$ bit tag --all 0.0.1
+1 component(s) tagged
+(use "bit export [collection]" to push these components to a remote")
+(use "bit untag" to unstage versions)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+new components
+(first version for components)
+     > product-list@0.0.1
+This command tags all the components that are currently staged in Bit. In our case, it's only the product-list component.
 
-### `yarn build`
+You can check the component status (bit status) and you'll find the following:
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+$ bit status
+staged components
+(use "bit export <remote_scope> to push these components to a remote scope")
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+     > product-list. versions: 0.0.1 ... ok
+The important thing to notice here is that the component is considered staged. That means that it is now ready to be exported.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To export the component to your bit.dev collection, we will use the export command and the full name of the collection, structured as <username>.<collection>:
 
-### `yarn eject`
+$ bit export <username>.react-tutorial
+exported 1 components to scope <username>.react-tutorial
+The component is now visible in your collection on bit.dev. You can access it in https://bit.dev/<username>/react-tutorial. You can also visit the component created for this demo on: https://bit.dev/bit/react-tutorial
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+At this point, checking bit's status will no longer display the component as the component is now hosted on the remote collection:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+$ bit status
+nothing to tag or export
+If you want to see all the components you have you can run:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+bit list
+You will get a list of all components and their versions.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Right now, the component code is in your local project (and should be committed to your source control), but it is also available for other projects.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Prev
