@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 const Flex = props => {
   return (
     <div
+      test-id="flex-component"
       className={props.className}
       style={{
         display: props.container ? 'flex' : 'block',
