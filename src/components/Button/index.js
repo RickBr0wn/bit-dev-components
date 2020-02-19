@@ -13,9 +13,16 @@ const StyledButton = styled.button`
   height: ${props => props.height || '50px'};
   width: ${props => props.width || '100px'};
   text-transform: ${props => props.lowercase || 'uppercase'};
+  box-shadow: ${props => (props.boxShadow ? '3px 3px 5px #999' : null)};
+  transition: all 0.2s;
 
   :focus {
     outline: none;
+  }
+
+  :active {
+    box-shadow: 0px 0px 0px transparent;
+    transform: ${props => (props.boxShadow ? 'translateY(2px)' : null)};
   }
 `
 
@@ -37,6 +44,7 @@ Button.propTypes = {
   border: PropTypes.string,
   onClick: PropTypes.func,
   padding: PropTypes.string,
+  boxShadow: PropTypes.string,
 }
 
 export default Button
