@@ -8,12 +8,14 @@ var _react2 = require("@testing-library/react");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-describe('Name of the group', function () {
-  it('should ', function () {
-    var _render = (0, _react2.render)(_react.default.createElement(_.default, null)),
-        getByText = _render.getByText;
+describe('<Flex />', function () {
+  it('should render without errors', function () {
+    var _render = (0, _react2.render)(_react.default.createElement(_.default, null, _react.default.createElement("h1", null, "TEST"))),
+        getByTestId = _render.getByTestId,
+        getByText = _render.getByText,
+        container = _render.container;
 
-    expect(true).toBe(true);
+    expect(getByTestId('flex-component')).toBeTruthy();
   });
 });
 

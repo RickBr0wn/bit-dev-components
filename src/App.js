@@ -1,12 +1,8 @@
 import React from 'react'
-import Flex from './components/Flex'
+import Button from './components/Button'
 
 function App() {
-  return (
-    <div>
-      <Flex />
-    </div>
-  )
+  return <Button boxShadow onClick={() => console.log('clicked')} />
 }
 
 export default App

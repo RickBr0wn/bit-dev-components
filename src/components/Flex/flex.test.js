@@ -1,10 +1,14 @@
 import React from 'react'
 import Flex from './'
-import { render, fireEvent, waitForElement } from '@testing-library/react'
+import { render } from '@testing-library/react'
 
-describe('Name of the group', () => {
-  it('should ', () => {
-    const { getByText } = render(<Flex />)
-    expect(true).toBe(true)
+describe('<Flex />', () => {
+  it('should render without errors', () => {
+    const { getByTestId, getByText, container } = render(
+      <Flex>
+        <h1>TEST</h1>
+      </Flex>
+    )
+    expect(getByTestId('flex-component')).toBeTruthy()
   })
 })
