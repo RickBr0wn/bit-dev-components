@@ -1,10 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 const Flex = props => {
   return (
     <div
-      test-id="flex-component"
+      data-testid="flex-component"
       className={props.className}
       style={{
         display: props.container ? 'flex' : 'block',
