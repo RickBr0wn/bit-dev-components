@@ -16,7 +16,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  font-size: ", ";\n  margin: ", ";\n  padding: ", ";\n  border-radius: ", ";\n  border: ", ";\n  background-color: ", ";\n  color: ", ";\n  height: ", ";\n  width: ", ";\n  text-transform: ", ";\n\n  :focus {\n    outline: none;\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  font-size: ", ";\n  margin: ", ";\n  padding: ", ";\n  border-radius: ", ";\n  border: ", ";\n  background-color: ", ";\n  color: ", ";\n  height: ", ";\n  width: ", ";\n  text-transform: ", ";\n  box-shadow: ", ";\n  transition: all 0.2s;\n\n  :focus {\n    outline: none;\n  }\n\n  :active {\n    box-shadow: 0px 0px 0px transparent;\n    transform: ", ";\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -47,6 +47,10 @@ var StyledButton = _styledComponents.default.button(_templateObject(), function 
   return props.width || '100px';
 }, function (props) {
   return props.lowercase || 'uppercase';
+}, function (props) {
+  return props.boxShadow ? '3px 3px 5px #999' : null;
+}, function (props) {
+  return props.boxShadow ? 'translateY(2px)' : null;
 });
 
 var Button = function Button(props) {
@@ -64,7 +68,8 @@ Button.propTypes = {
   borderRadius: _propTypes.default.string,
   border: _propTypes.default.string,
   onClick: _propTypes.default.func,
-  padding: _propTypes.default.string
+  padding: _propTypes.default.string,
+  boxShadow: _propTypes.default.string
 };
 var _default = Button;
 exports.default = _default;
