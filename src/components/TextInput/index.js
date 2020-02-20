@@ -34,7 +34,7 @@ const StyledTextInput = styled.input`
 `
 
 const TextInput = props => {
-  const { type, placeholder } = props
+  const { type, placeholder, text, setText } = props
   return (
     <div>
       <StyledTextInput
@@ -42,6 +42,8 @@ const TextInput = props => {
         className="form__input"
         type={type || 'text'}
         placeholder={placeholder || 'text_field'}
+        onChange={e => (setText ? setText(e.target.value) : null)}
+        text={text ? text : null}
         {...props}
       />
     </div>
@@ -53,6 +55,8 @@ TextInput.propTypes = {
   inputWidth: PropTypes.string,
   type: PropTypes.string,
   placeholder: PropTypes.string,
+  text: PropTypes.func,
+  setText: PropTypes.func,
 }
 
 export default TextInput
