@@ -3,17 +3,22 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const StyledButton = styled.button`
-  font-size: ${props => props.fontSize || '1em'};
-  margin: ${props => props.margin || '1em'};
-  padding: ${props => props.padding || '0.25em 1em'};
-  border-radius: ${props => props.borderRadius || '3px'};
-  border: ${props => props.border || 'none'};
-  background-color: ${props => props.backgroundColor || '#4286f4'};
-  color: ${props => props.textColor || '#fff'};
-  height: ${props => props.height || '50px'};
-  width: ${props => props.width || '100px'};
-  text-transform: ${props => props.lowercase || 'uppercase'};
-  box-shadow: ${props => (props.boxShadow ? '3px 3px 5px #999' : null)};
+  font-size: ${({ fontSize }) => fontSize || '15px'};
+  margin: ${({ margin }) => margin || '0px'};
+  margin-top: ${({ marginTop }) => marginTop || '0px'};
+  margin-bottom: ${({ marginBottom }) => marginBottom || '0px'};
+  margin-right: ${({ marginRight }) => marginRight || '0px'};
+  margin-left: ${({ marginLeft }) => marginLeft || '0px'};
+  padding: ${({ padding }) => padding || '0px'};
+  border-radius: ${({ borderRadius }) => borderRadius || '3px'};
+  border: ${({ border }) => border || 'none'};
+  background-color: ${({ backgroundColor }) => backgroundColor || '#4286f4'};
+  color: ${({ textColor }) => textColor || '#fff'};
+  height: ${({ height }) => height || '40px'};
+  width: ${({ width }) => width || '100px'};
+  text-transform: ${({ lowercase }) => lowercase || 'uppercase'};
+  box-shadow: ${({ boxShadow }) =>
+    boxShadow ? '0 10px 20px rgba(0, 0, 0, 0.2)' : null};
   transition: all 0.2s;
 
   :focus {
@@ -22,7 +27,7 @@ const StyledButton = styled.button`
 
   :active {
     box-shadow: 0px 0px 0px transparent;
-    transform: ${props => (props.boxShadow ? 'translateY(2px)' : null)};
+    transform: ${({ boxShadow }) => (boxShadow ? 'translateY(1px)' : null)};
   }
 `
 
@@ -44,7 +49,12 @@ Button.propTypes = {
   border: PropTypes.string,
   onClick: PropTypes.func,
   padding: PropTypes.string,
-  boxShadow: PropTypes.string,
+  boxShadow: PropTypes.bool,
+  margin: PropTypes.string,
+  marginBottom: PropTypes.string,
+  marginLeft: PropTypes.string,
+  marginRight: PropTypes.string,
+  marginTop: PropTypes.string,
 }
 
 export default Button
