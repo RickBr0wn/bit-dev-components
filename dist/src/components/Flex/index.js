@@ -9,11 +9,13 @@ var _react = _interopRequireDefault(require("react"));
 
 var _propTypes = _interopRequireDefault(require("prop-types"));
 
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Flex = function Flex(props) {
   return _react.default.createElement("div", {
-    "test-id": "flex-component",
+    "data-testid": "flex-component",
     className: props.className,
     style: {
       display: props.container ? 'flex' : 'block',
