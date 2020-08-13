@@ -73,5 +73,18 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "waves@0.0.9": {
+        "files": [
+            {
+                "relativePath": "src/components/Waves/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/components/Waves/index.js",
+        "trackDir": "src/components/Waves",
+        "origin": "AUTHORED",
+        "exported": false
+    },
     "version": "14.7.4"
 }
