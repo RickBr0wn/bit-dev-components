@@ -1,14 +1,25 @@
-import React from 'react'
-// import Flex from './components/Flex'
-// import Button from './components/Button'
-// import TextInput from './components/TextInput'
-import AnimatedCounter from './components/Animated_Counter'
+import React, { useState } from 'react'
+import Flex from './components/Flex'
+import Button from './components/Button'
+import TextInput from './components/TextInput'
+import Waves from './components/Waves'
+// import AnimatedCounters from './components/Animated_Counters'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+// import {
+//   faCoffee,
+//   faInsta,
+//   faFacebook,
+//   faTwitter,
+//   faYoutube,
+// } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
-  const [state, setState] = React.useState('')
-  const topics = [{ icon: '', amount: 12000, title: 'Subscribers' }]
+  const [state, setState] = useState('')
+
   return (
     <>
+      <Waves />
       {/* <Flex container alignItems="center" padding="20px">
         <Button boxShadow />
         <TextInput
@@ -19,7 +30,32 @@ function App() {
         />
       </Flex>
       <p>{state}</p> */}
-      <AnimatedCounter topics={topics} />
+      {/* // https://fontawesome.com/icons?d=gallery */}
+      {/* <AnimatedCounters
+        // title={'Animated Counter Component'}
+        topics={[
+          {
+            icon: faInsta,
+            amount: 52000,
+            title: 'YouTube',
+          },
+          {
+            icon: faYoutube,
+            amount: 5000,
+            title: 'Twitter',
+          },
+          {
+            icon: faFacebook,
+            amount: 50000,
+            title: 'Facebook',
+          },
+          {
+            icon: faTwitter,
+            amount: 4000,
+            title: 'Linkedin',
+          },
+        ]}
+      /> */}
     </>
   )
 }
